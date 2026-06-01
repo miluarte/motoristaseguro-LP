@@ -1,0 +1,116 @@
+:root {
+  /* ==========================================================================
+     PALETA DE CORES PRIMITIVAS
+     ========================================================================== */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-transparent: #FFFFFF00;
+
+  /* Red */
+  --color-red-50: #FEF2F2;
+  --color-red-100: #FFE2E2;
+  --color-red-200: #FFC9C9;
+  --color-red-300: #FFA2A2;
+  --color-red-400: #FF6467;
+  --color-red-500: #FB2C36;
+  --color-red-600: #E7000B;
+  --color-red-700: #C10007;
+  --color-red-800: #9F0712;
+  --color-red-900: #82181A;
+  --color-red-950: #460809;
+
+  /* Gray */
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DC;
+  --color-gray-400: #99A1AF;
+  --color-gray-500: #6A7282;
+  --color-gray-600: #4A5565;
+  --color-gray-700: #364153;
+  --color-gray-800: #1E2939;
+  --color-gray-900: #101828;
+  --color-gray-950: #030712;
+
+  /* GovAzul */
+  --color-govazul-50: #F0F6FF;
+  --color-govazul-100: #D0E7FF;
+  --color-govazul-200: #7DBDFC;
+  --color-govazul-300: #389CF8;
+  --color-govazul-400: #0E7FE9;
+  --color-govazul-500: #0262C7;
+  --color-govazul-600: #0352AA;
+  --color-govazul-700: #074385;
+  --color-govazul-800: #0C396E;
+  --color-govazul-900: #082449;
+  --color-govazul-950: #081C37;
+
+  /* ==========================================================================
+     DIMENSÕES E ESPAÇAMENTOS
+     ========================================================================== */
+  /* Spacing */
+  --spacing-0: 0px;
+  --spacing-px: 1px;
+  --spacing-0-5: 2px;
+  --spacing-1: 4px;
+  --spacing-1-5: 6px;
+  --spacing-2: 8px;
+  --spacing-2-5: 10px;
+  --spacing-3: 12px;
+  --spacing-3-5: 14px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-14: 56px;
+  --spacing-16: 64px;
+  --spacing-20: 80px;
+  --spacing-24: 96px;
+  --spacing-28: 112px;
+  --spacing-32: 128px;
+  --spacing-36: 144px;
+  --spacing-40: 160px;
+  --spacing-44: 176px;
+  --spacing-48: 192px;
+  --spacing-52: 208px;
+  --spacing-56: 224px;
+  --spacing-60: 240px;
+  --spacing-64: 256px;
+  --spacing-72: 288px;
+  --spacing-80: 320px;
+  --spacing-96: 384px;
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     TOKENS SEMÂNTICOS / ALIASES
+     ========================================================================== */
+  /* Backgrounds */
+  --bg-page: var(--color-white);
+  --bg-card: var(--color-gray-100);
+
+  /* Borders */
+  --border-default: var(--color-gray-200);
+
+  /* Foregrounds (Texto e Ícones) */
+  --fg-emphasis: var(--color-gray-950);
+  --fg-default: var(--color-gray-600);
+  --fg-muted: var(--color-gray-400);
+  --fg-brand: var(--color-govazul-600);
+  --fg-white: var(--color-white);
+}

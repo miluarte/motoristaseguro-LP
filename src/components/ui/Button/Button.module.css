@@ -1,0 +1,43 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Sizes */
+.default {
+  font-size: 0.9375rem;
+  padding: var(--spacing-3) var(--spacing-6);
+}
+
+.large {
+  font-size: 1rem;
+  padding: var(--spacing-4) var(--spacing-8);
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-govazul-400);
+  color: var(--fg-white);
+  border: 2px solid transparent;
+}
+
+.primary:hover {
+  background-color: var(--color-govazul-300);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--fg-white);
+  border: 2px solid var(--color-govazul-400);
+}
+
+.secondary:hover {
+  background-color: var(--color-govazul-900);
+}
