@@ -1,8 +1,5 @@
 .footer {
   background-color: var(--bg-footer);
-  border-top: 1px solid var(--border-footer-edge);
-  border-left: 1px solid var(--border-footer-edge);
-  border-right: 1px solid var(--border-footer-edge);
   border-radius: var(--radius-4xl) var(--radius-4xl) 0 0;
   overflow: hidden;
 }

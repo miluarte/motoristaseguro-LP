@@ -5,10 +5,8 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-
         {/* Main grid: brand + nav */}
         <div className={styles.main}>
-
           {/* Brand column */}
           <div className={styles.brand}>
             <a href="/" aria-label="Motorista Seguro — página inicial">
@@ -20,7 +18,7 @@ export default function Footer() {
             </a>
             <p className={styles.description}>
               Iniciativa da Secretaria de Segurança Pública do Piauí para
-              motoristas profissionais. Em emergência sem cobertura, ligue{' '}
+              motoristas profissionais. Em emergência sem cobertura, ligue{" "}
               <span className={styles.emergencyNumber}>190.</span>
             </p>
           </div>
@@ -30,26 +28,45 @@ export default function Footer() {
             <div className={styles.navColumn}>
               <h3 className={styles.navTitle}>Mapa do Site</h3>
               <MenuItem variant="anchor" label="Sobre" href="#sobre" />
-              <MenuItem variant="anchor" label="Como funciona" href="#como-funciona" />
-              <MenuItem variant="anchor" label="Dúvidas frequentes" href="#duvidas" />
-              <MenuItem variant="anchor" label="Baixe Agora — Android" href="#baixar" />
+              <MenuItem
+                variant="anchor"
+                label="Como funciona"
+                href="#como-funciona"
+              />
+              <MenuItem
+                variant="anchor"
+                label="Dúvidas frequentes"
+                href="#duvidas"
+              />
+              <MenuItem
+                variant="anchor"
+                label="Baixe Agora — Android"
+                href="#baixar"
+              />
             </div>
 
             <div className={styles.navColumn}>
               <h3 className={styles.navTitle}>Institucional</h3>
-              <MenuItem variant="anchor" label="Política de privacidade" href="#privacidade" />
+              <MenuItem
+                variant="anchor"
+                label="Política de privacidade"
+                href="#privacidade"
+              />
               <MenuItem variant="anchor" label="Termos de Uso" href="#termos" />
               <MenuItem variant="anchor" label="LGPD" href="#lgpd" />
-              <MenuItem variant="anchor" label="Acessibilidade" href="#acessibilidade" />
+              <MenuItem
+                variant="anchor"
+                label="Acessibilidade"
+                href="#acessibilidade"
+              />
             </div>
           </div>
-
         </div>
 
         {/* Bottom bar */}
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            © 2026 Governo do Estado do Piauí · SSP-PI
+            © 2026 Secretaria de Segurança Pública do Piauí | SSP - PI
           </p>
           <div className={styles.contacts}>
             <span className={styles.contactItem}>
@@ -60,7 +77,6 @@ export default function Footer() {
             </span>
           </div>
         </div>
-
       </div>
     </footer>
   );

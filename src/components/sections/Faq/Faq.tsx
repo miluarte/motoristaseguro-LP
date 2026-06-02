@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import TagSection from '@/components/ui/TagSection/TagSection';
 import Accordion from '@/components/ui/Accordion/Accordion';
 import styles from './Faq.module.css';
@@ -7,7 +10,6 @@ const faqs = [
     question: 'O aplicativo tem algum custo?',
     answer:
       'Não. O Motorista Seguro é totalmente gratuito, desenvolvido e mantido pela Secretaria de Segurança Pública do Piauí.',
-    defaultOpen: true,
   },
   {
     question: 'Posso utilizar o aplicativo offline?',
@@ -32,6 +34,8 @@ const faqs = [
 ];
 
 export default function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className={styles.section} id="duvidas">
       <div className={styles.container}>
@@ -44,12 +48,13 @@ export default function Faq() {
         </div>
 
         <div className={styles.accordions}>
-          {faqs.map((faq) => (
+          {faqs.map((faq, index) => (
             <Accordion
               key={faq.question}
               question={faq.question}
               answer={faq.answer}
-              defaultOpen={faq.defaultOpen}
+              isOpen={openIndex === index}
+              onToggle={() => setOpenIndex(openIndex === index ? null : index)}
             />
           ))}
         </div>

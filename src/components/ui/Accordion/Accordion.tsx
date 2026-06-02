@@ -1,12 +1,10 @@
-'use client';
-
-import { useState } from 'react';
 import styles from './Accordion.module.css';
 
 interface AccordionProps {
   question: string;
   answer: string;
-  defaultOpen?: boolean;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
 function PlusIcon() {
@@ -22,15 +20,12 @@ function PlusIcon() {
   );
 }
 
-
-export default function Accordion({ question, answer, defaultOpen = false }: AccordionProps) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-
+export default function Accordion({ question, answer, isOpen, onToggle }: AccordionProps) {
   return (
     <div className={`${styles.accordion} ${isOpen ? styles.open : ''}`}>
       <button
         className={styles.trigger}
-        onClick={() => setIsOpen((prev) => !prev)}
+        onClick={onToggle}
         aria-expanded={isOpen}
       >
         <span className={styles.question}>{question}</span>
