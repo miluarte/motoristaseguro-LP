@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Onest } from "next/font/google";
 import "./globals.css";
+
+const onest = Onest({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-onest",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Motorista Seguro",
@@ -25,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={onest.variable}>
       <body>{children}</body>
     </html>
   );

@@ -1,0 +1,38 @@
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-onest);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-onest-3);
+  line-height: var(--line-height-6);
+  letter-spacing: var(--letter-spacing-2);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+/* default — item de navegação com fundo no hover */
+.default {
+  padding: var(--spacing-1-5) var(--spacing-3);
+  color: var(--fg-default);
+}
+
+.default:hover {
+  background-color: var(--bg-card);
+  color: var(--fg-emphasis);
+}
+
+/* anchor — link sem padding, para fundos escuros */
+.anchor {
+  padding: 0;
+  color: var(--fg-muted);
+}
+
+.anchor:hover {
+  color: var(--fg-white);
+}

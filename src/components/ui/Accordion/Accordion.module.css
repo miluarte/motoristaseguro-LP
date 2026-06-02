@@ -1,0 +1,64 @@
+.accordion {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Trigger */
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  width: 100%;
+  padding: var(--spacing-6);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.question {
+  flex: 1;
+  font-family: var(--font-family-onest);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-onest-2);
+  line-height: var(--line-height-4);
+  color: var(--fg-emphasis);
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--fg-emphasis);  display: flex;
+  align-items: center;
+  transition: color 0.2s, transform 0.25s ease;
+}
+
+.iconOpen {
+  transform: rotate(45deg);
+}
+
+/* Answer — animação com grid rows */
+.answerWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.accordion.open .answerWrapper {
+  grid-template-rows: 1fr;
+}
+
+.answerWrapper > p {
+  overflow: hidden;
+}
+
+.answer {
+  font-family: var(--font-family-onest);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-onest-1);
+  line-height: var(--line-height-4);
+  color: var(--fg-default);
+  padding: 0 var(--spacing-6) var(--spacing-6);
+}

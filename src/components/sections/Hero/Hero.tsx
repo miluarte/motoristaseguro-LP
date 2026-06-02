@@ -1,24 +1,68 @@
-import Button from '@/components/ui/Button/Button';
+import TagSection from '@/components/ui/TagSection/TagSection';
+import ButtonDownload from '@/components/ui/ButtonDownload/ButtonDownload';
 import styles from './Hero.module.css';
+
+function CheckCheckIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path
+        d="M1.5 8.5L5 12L10.5 5M5.5 8.5L9 12L14.5 5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+const features = [
+  'Gratuito e oficial',
+  'Central ativa 24h',
+  'Dados protegidos pela LGPD',
+];
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.section}>
       <div className={styles.container}>
+
+        {/* Coluna esquerda — conteúdo */}
         <div className={styles.content}>
-          <span className={styles.badge}>Programa Governamental</span>
-          <h1 className={styles.title}>
-            Sua segurança no trânsito é nossa prioridade
+          <TagSection label="Aplicativo oficial da SSP-PI" />
+
+          <h1 className={`heading-xl ${styles.heading}`}>
+            Mais segurança<br />
+            para quem vive na<br />
+            estrada
           </h1>
-          <p className={styles.description}>
-            O Motorista Seguro é um programa dedicado a promover a educação no
-            trânsito e garantir mais segurança para todos os condutores brasileiros.
+
+          <p className={`text-md-regular ${styles.description}`}>
+            O Motorista Seguro é o canal direto entre motoristas profissionais
+            do Piauí e a central de segurança da SSP-PI. Em uma situação de
+            risco, três segundos pressionando o botão são suficientes para
+            enviar sua localização, áudio e alerta às forças policiais.
           </p>
-          <div className={styles.actions}>
-            <Button href="#inscricao" variant="primary">Quero participar</Button>
-            <Button href="#sobre" variant="secondary">Saiba mais</Button>
+
+          <div className={styles.downloadButtons}>
+            <ButtonDownload variant="playstore" color="dark" href="#baixar" />
           </div>
+
+          <ul className={styles.features}>
+            {features.map((feature) => (
+              <li key={feature} className={`text-sm-regular ${styles.featureItem}`}>
+                <span className={styles.featureIcon}>
+                  <CheckCheckIcon />
+                </span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        {/* Coluna direita — espaço reservado para imagem */}
+        <div className={styles.imagePlaceholder} aria-hidden="true" />
+
       </div>
     </section>
   );

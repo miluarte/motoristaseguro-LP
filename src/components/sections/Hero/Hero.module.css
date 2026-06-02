@@ -1,51 +1,90 @@
-.hero {
-  background-color: var(--color-govazul-950);
-  padding: var(--spacing-20) 0 var(--spacing-24);
+.section {
+  padding-top: var(--spacing-5);
+  padding-bottom: var(--spacing-20);
+  width: 100%;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--spacing-6);
+  padding: 0 var(--spacing-16);
+  display: flex;
+  align-items: center;
 }
 
+/* ==========================================
+   Coluna de conteúdo
+   ========================================== */
 .content {
-  max-width: 680px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-6);
 }
 
-.badge {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-govazul-300);
-  background-color: var(--color-govazul-900);
-  border: 1px solid var(--color-govazul-700);
-  padding: var(--spacing-1) var(--spacing-3);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--spacing-6);
-}
-
-.title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--fg-white);
-  margin-bottom: var(--spacing-6);
+.heading {
+  color: var(--fg-emphasis);
 }
 
 .description {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--color-govazul-200);
-  margin-bottom: var(--spacing-10);
-  max-width: 560px;
+  color: var(--fg-default);
+  max-width: 600px;
 }
 
-.actions {
+.downloadButtons {
   display: flex;
-  gap: var(--spacing-4);
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Features */
+.features {
+  list-style: none;
+  display: flex;
   flex-wrap: wrap;
+  gap: var(--spacing-6);
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--fg-default);
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--fg-sucess);
+}
+
+/* ==========================================
+   Coluna da imagem (placeholder)
+   ========================================== */
+.imagePlaceholder {
+  flex: 1;
+  min-height: 660px;
+}
+
+/* ==========================================
+   Responsivo
+   ========================================== */
+@media (max-width: 1024px) {
+  .imagePlaceholder {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--spacing-10);
+    padding-bottom: var(--spacing-12);
+  }
+
+  .container {
+    padding: 0 var(--spacing-5);
+    flex-direction: column;
+  }
 }

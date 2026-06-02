@@ -1,0 +1,185 @@
+.section {
+  padding: var(--spacing-20) 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-16);
+}
+
+/* ==========================================
+   Cabeçalho centralizado
+   ========================================== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-6);
+  width: 100%;
+}
+
+.heading {
+  color: var(--fg-emphasis);
+  text-align: center;
+}
+
+.description {
+  color: var(--fg-default);
+  text-align: center;
+  max-width: 700px;
+}
+
+.description strong {
+  font-weight: var(--font-weight-onest-2);
+  color: var(--fg-emphasis);
+}
+
+/* ==========================================
+   Cards
+   ========================================== */
+.cards {
+  display: flex;
+  gap: var(--spacing-5);
+  align-items: flex-start;
+  width: 100%;
+}
+
+.card {
+  flex: 1;
+  min-width: 0;
+  height: 449px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  overflow: hidden;
+  position: relative;
+}
+
+.cardReverse {
+  justify-content: flex-end;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1-5);
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  color: var(--fg-emphasis);
+}
+
+.cardDescription {
+  color: var(--fg-default);
+}
+
+/* ==========================================
+   Mockup de iPhone
+   ========================================== */
+.phoneWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 431 / 885;
+}
+
+.phoneFrameLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.phoneFrame {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phoneScreen {
+  position: absolute;
+  top: 1.88%;
+  right: 4.48%;
+  bottom: 1.88%;
+  left: 4.4%;
+  overflow: hidden;
+  border-radius: 14%;
+}
+
+.phoneScreenImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+   Gradiente de fade nas bordas do card
+   ========================================== */
+.gradient {
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  height: 140px;
+  pointer-events: none;
+}
+
+.gradientBottom {
+  bottom: -1px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg-card) 0%, transparent),
+    var(--bg-card)
+  );
+}
+
+.gradientTop {
+  top: -1px;
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--bg-card) 0%, transparent),
+    var(--bg-card)
+  );
+}
+
+/* ==========================================
+   Responsivo
+   ========================================== */
+@media (max-width: 1024px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-5);
+    gap: var(--spacing-10);
+  }
+
+  .heading {
+    font-size: var(--font-size-3);
+  }
+
+  .card {
+    height: 320px;
+  }
+}

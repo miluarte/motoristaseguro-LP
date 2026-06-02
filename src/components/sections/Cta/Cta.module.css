@@ -1,0 +1,160 @@
+.section {
+  padding: var(--spacing-20) 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-16);
+}
+
+/* ==========================================
+   Card azul principal
+   ========================================== */
+.card ::selection {
+  background-color: color-mix(in srgb, var(--color-gray-100) 20%, transparent);
+  color: var(--color-gray-100);
+}
+
+.card {
+  background-color: var(--bg-brand);
+  border-radius: var(--radius-4xl);
+  padding: var(--spacing-20);
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================
+   Decoração de fundo (arcos)
+   ========================================== */
+.bgDecoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bgDecorationImg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* ==========================================
+   Mockup do iPhone (overflows o topo do card)
+   ========================================== */
+.phone {
+  position: absolute;
+  right: 74px;
+  bottom: 0;
+  width: 367px;
+  height: 521px;
+  overflow: hidden;
+}
+
+.phoneInner {
+  position: absolute;
+  left: 0;
+  right: -0.09%;
+  top: calc(50% + 116.43px);
+  transform: translateY(-50%);
+  aspect-ratio: 365 / 750;
+  border-radius: 53px;
+}
+
+.phoneFrame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 53px;
+}
+
+.phoneScreen {
+  position: absolute;
+  left: 4.41%;
+  right: 4.4%;
+  top: calc(50% + 116.43px);
+  transform: translateY(-50%);
+  aspect-ratio: 333 / 722;
+  overflow: hidden;
+}
+
+.phoneScreenImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+   Conteúdo textual
+   ========================================== */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  max-width: 500px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--radius-full);
+  background-color: var(--bg-brand-hover);
+  border: 1px solid var(--border-on-brand-subtle);
+  align-self: flex-start;
+}
+
+.tagDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--fg-on-brand-hover);
+  flex-shrink: 0;
+}
+
+.tagLabel {
+  color: var(--fg-on-brand-hover);
+  white-space: nowrap;
+}
+
+.heading {
+  color: var(--fg-white);
+}
+
+.description {
+  color: var(--fg-on-brand-hover);
+}
+
+/* ==========================================
+   Responsivo
+   ========================================== */
+@media (max-width: 1024px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-5);
+  }
+
+  .card {
+    padding: var(--spacing-12) var(--spacing-8);
+    border-radius: var(--radius-3xl);
+  }
+
+  .heading {
+    font-size: var(--font-size-3);
+  }
+}

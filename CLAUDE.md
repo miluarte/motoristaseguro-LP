@@ -1,47 +1,60 @@
-# Landing Page Gov — [Nome do Projeto]
+# Contexto do Projeto: Motorista Seguro - LP
 
-## Stack
-- Next.js 15 (App Router)
-- TypeScript
-- CSS Modules + CSS Variables (sem Tailwind)
+Este documento serve como a única fonte da verdade (Single Source of Truth) para a arquitetura, convenções de código e estrutura do projeto **Motorista Seguro - LP**. Siga estas diretrizes rigorosamente em todas as respostas e gerações de código.
 
-## Convenções
-- Cada componente tem sua própria pasta com .tsx e .module.css
-- Variáveis de design ficam em src/styles/variables.css
-- Nunca usar valores hardcoded de cor, fonte ou espaçamento
-- Imagens ficam em public/images/ organizadas por contexto
+---
 
-## Design System — Camadas de variáveis
+## 🛠 Stack Tecnológica
+- **Framework:** Next.js 15 (App Router)
+- **Linguagem:** TypeScript
+- **Estilização:** CSS Modules (`.module.css`) + CSS Variables nativas
+- **Proibido:** Uso de frameworks utilitários de CSS (como Tailwind, UnoCSS ou Bootstrap) e bibliotecas de CSS-in-JS em runtime (como Styled Components).
 
-### Primitivas (não usar diretamente nos componentes)
-Cores brutas da paleta: --color-govazul-500, --color-gray-200, etc.
-Espaçamentos numéricos: --spacing-4, --radius-lg, etc.
+---
 
-### Semânticas / Aliases (usar nos componentes)
---bg-page, --bg-card          → fundos
---border-default              → bordas
---fg-emphasis, --fg-default, --fg-muted, --fg-brand, --fg-white → textos e ícones
+## 📐 Diretrizes e Convenções de Código
 
-### Regra
-Componentes usam SEMPRE tokens semânticos.
-Tokens primitivos só existem para alimentar os semânticos.
-Exemplo correto:   color: var(--fg-default);
-Exemplo errado:    color: var(--color-gray-600);
+### 1. Componentização e Estrutura
+- Cada componente deve ser isolado em sua própria pasta contendo exatamente o arquivo estrutural (`.tsx`) e o arquivo de estilo específico (`.module.css`).
+- **Exemplo:** `src/components/sections/Hero/Hero.tsx` e `src/components/sections/Hero/Hero.module.css`.
 
-## Estrutura
-src/app/             → páginas e layout raiz
-src/components/
-  layout/            → Header e Footer
-  sections/          → seções da landing (Hero, About, Features, CTA...)
-  ui/                → componentes reutilizáveis (Button, Card, Badge...)
-src/styles/          → variables.css e reset.css
-src/lib/             → utilitários e helpers
-public/images/
-  hero/              → imagens da seção hero
-  icons/             → ícones SVG
-  logos/             → logotipos
+### 2. Regra de Composição de Componentes (Modularidade Rígida)
+- **Proibido Componentes Compostos Diretos:** Nenhum elemento complexo de UI deve ser escrito diretamente dentro de uma seção ou layout. Componentes maiores (compostos) devem atuar estritamente como orquestradores, importando subcomponentes menores e isolados.
+- **Exemplo Prático:** O `Header` (Layout) ou a seção `Hero` não devem conter a estrutura JSX crua e a estilização de um botão ou de um card em seus escopos. O botão deve ser criado isoladamente em `src/components/ui/Button/`, e então importado para dentro do `Header` ou `Hero`.
+- **Regra de Estilo:** A margem ou o posicionamento do componente filho dentro do pai deve ser controlada pelo CSS do **componente pai**, garantindo que o componente filho permaneça 100% reutilizável e agnóstico ao contexto.
 
-## Como adicionar uma nova seção
-1. Criar pasta em src/components/sections/NomeSecao/
-2. Criar NomeSecao.tsx e NomeSecao.module.css
-3. Importar e adicionar na page.tsx
+### 3. Uso Rígido do Design System (CSS Variables)
+- **Regra de Ouro:** Nunca utilize valores fixos (*hardcoded*) de cores, fontes, tamanhos, *paddings*, *margins* ou *border-radius* nos arquivos `.module.css`. Tudo deve consumir as variáveis globais injetadas a partir de `src/styles/variables.css`.
+- O projeto adota uma arquitetura de duas camadas para os Design Tokens no `:root`:
+  - **Primitivos (Uso Restrito):** Valores brutos e escalonados. *Nunca use diretamente nos componentes.* Ex: `--color-govazul-500`, `--color-gray-600`, `--spacing-4`, `--radius-lg`.
+  - **Semânticos / Aliases (Uso Obrigatório):** Variáveis que carregam a intenção do design. *Apenas estes devem ser mapeados nos componentes.* Ex: `--bg-page`, `--bg-card`, `--border-default`, `--fg-emphasis`, `--fg-default`, `--fg-muted`, `--fg-brand`, `--fg-white`.
+
+> ❌ **Errado:** `color: var(--color-gray-600);` ou `padding: 16px;`
+> 
+>  **Certo:** `color: var(--fg-default);` ou `padding: var(--spacing-4);`
+
+### 4. Diretrizes para Assets e Ícones (SVGs)
+- Não utilizamos bibliotecas externas de ícones (como `lucide-react` ou `react-icons`) para manter o *bundle* leve.
+- Todos os arquivos `.svg` brutos (ícones de marcas, ilustrações e logotipos) ficam centralizados em `public/images/icons/` e `public/images/logos/`.
+- **Ícones Estáticos (Marcas/Logos):** Devem ser chamados usando o componente `Image` nativo do Next.js passando o caminho absoluto da pasta pública. Ex: `src="/images/icons/googleplay.svg"`.
+- **Ícones Dinâmicos (Interativos):** Caso o ícone precise mudar de cor via CSS de acordo com o estado do componente (como um ícone de download), o código interno do SVG deve ser transformado em um componente React puro (usando `fill="currentColor"` ou `stroke="currentColor"`) e armazenado em `src/components/ui/` ou subpastas de ícones dedicadas.
+
+---
+
+## 📦 Estrutura Real de Pastas
+
+```text
+MOTORISTASEGURO-LP/
+├── public/
+│   ├── favicon_io/       # Favicons do projeto
+│   └── images/           # Assets visuais estáticos e vetores
+│       ├── icons/        # Arquivos brutos .svg (Apple.svg, dot.svg, download.svg, googleplay.svg, Playstore.svg)
+│       └── logos/        # Logotipos institucionais (logo.svg)
+├── src/
+│   ├── app/              # Roteamento, layout raiz e estilos globais (globals.css, layout.tsx, page.tsx)
+│   ├── components/
+│   │   ├── layout/       # Componentes estruturais fixos (Header, Footer)
+│   │   ├── sections/     # Seções da Landing Page (Hero, etc.)
+│   │   └── ui/           # Elementos de interface atômicos e reutilizáveis (Button, Card, Badge)
+│   ├── lib/              # Funções utilitárias, constantes e helpers
+│   └── styles/           # Arquitetura global de CSS (reset.css, variables.css)
