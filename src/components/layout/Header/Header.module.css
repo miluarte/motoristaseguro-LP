@@ -21,7 +21,7 @@
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: var(--spacing-3) var(--spacing-16);
+  padding: var(--spacing-3) 0;
   height: 64px;
   display: flex;
   align-items: center;
