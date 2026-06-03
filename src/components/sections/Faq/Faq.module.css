@@ -53,6 +53,10 @@
     gap: var(--spacing-10);
   }
 
+  .header {
+    gap: var(--spacing-3);
+  }
+
   .heading {
     font-size: var(--font-size-3);
     line-height: var(--line-height-3);

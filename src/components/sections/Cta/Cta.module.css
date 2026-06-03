@@ -131,6 +131,8 @@
   .content {
     order: 1;
     max-width: 100%;
+    gap: var(--spacing-3);
+
   }
 
   .phone {
