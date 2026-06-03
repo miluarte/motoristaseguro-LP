@@ -117,6 +117,10 @@
     padding: 0 var(--spacing-4);
   }
 
+  .cards {
+    gap: var(--spacing-3);
+  }
+
   .card {
     position: static;
     padding: var(--spacing-4);

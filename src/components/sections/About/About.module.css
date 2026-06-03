@@ -158,6 +158,10 @@
     line-height: var(--line-height-3);
   }
 
+  .cards {
+    gap: var(--spacing-3);
+  }
+
   .card {
     padding: var(--spacing-4) var(--spacing-4) 0;
   }
