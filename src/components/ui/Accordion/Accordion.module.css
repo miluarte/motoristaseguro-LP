@@ -9,10 +9,11 @@
 /* Trigger */
 .trigger {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  /* ← era center, quebrava o ícone em mobile */
   gap: var(--spacing-4);
   width: 100%;
-  padding: var(--spacing-6);  
+  padding: var(--spacing-6);
   background: none;
   border: none;
   cursor: pointer;
@@ -30,8 +31,11 @@
 
 .icon {
   flex-shrink: 0;
-  color: var(--fg-emphasis);  display: flex;
+  color: var(--fg-emphasis);
+  display: flex;
   align-items: center;
+  /* empurra o ícone pra alinhar com a primeira linha do texto */
+  margin-top: calc((var(--line-height-4) - 24px) / 2);
   transition: color 0.2s, transform 0.25s ease;
 }
 
@@ -50,7 +54,7 @@
   grid-template-rows: 1fr;
 }
 
-.answerWrapper > p {
+.answerInner {
   overflow: hidden;
 }
 
