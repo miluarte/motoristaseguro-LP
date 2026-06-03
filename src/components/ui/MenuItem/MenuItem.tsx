@@ -5,6 +5,7 @@ interface MenuItemProps {
   href?: string;
   variant?: 'default' | 'anchor';
   onClick?: () => void;
+  className?: string;
 }
 
 export default function MenuItem({
@@ -12,8 +13,9 @@ export default function MenuItem({
   href,
   variant = 'default',
   onClick,
+  className: extraClassName,
 }: MenuItemProps) {
-  const className = [styles.item, styles[variant]].join(' ');
+  const className = [styles.item, styles[variant], extraClassName].filter(Boolean).join(' ');
 
   if (href) {
     return (

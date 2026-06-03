@@ -118,9 +118,9 @@ export default function Header() {
             </div>
 
             <nav className={styles.drawerNav} aria-label="Navegação">
-              <MenuItem label="Sobre" href="#sobre" onClick={closeDrawer} />
-              <MenuItem label="Como funciona" href="#como-funciona" onClick={closeDrawer} />
-              <MenuItem label="Dúvidas frequentes" href="#duvidas" onClick={closeDrawer} />
+              <MenuItem label="Sobre" href="#sobre" onClick={closeDrawer} className={styles.drawerItem} />
+              <MenuItem label="Como funciona" href="#como-funciona" onClick={closeDrawer} className={styles.drawerItem} />
+              <MenuItem label="Dúvidas frequentes" href="#duvidas" onClick={closeDrawer} className={styles.drawerItem} />
             </nav>
 
             <Button href="#baixar" onClick={closeDrawer} className={styles.drawerCta}>
