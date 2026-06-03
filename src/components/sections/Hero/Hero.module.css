@@ -69,11 +69,6 @@
   min-height: 660px;
 }
 
-.heroImage {
-  object-fit: contain;
-  object-position: center bottom;
-}
-
 /* ==========================================
    Toasts flutuantes
    ========================================== */
@@ -82,6 +77,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -115,13 +111,18 @@
 
 @media (max-width: 768px) {
   .section {
-    padding-top: var(--spacing-10);
+    padding-top: var(--spacing-8);
     padding-bottom: var(--spacing-12);
   }
 
   .container {
     padding: 0 var(--spacing-5);
     flex-direction: column;
+    gap: var(--spacing-10);
+  }
+
+  .content {
+    gap: var(--spacing-3);
   }
 
   .heading {

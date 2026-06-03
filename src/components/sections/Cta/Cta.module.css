@@ -116,15 +116,16 @@
   }
 
   .container {
-    padding: 0 var(--spacing-5);
+    padding: 0 var(--spacing-4);
   }
 
   .card {
-    padding: var(--spacing-10) var(--spacing-8) 0;
+    padding: var(--spacing-10) var(--spacing-6) 0;
     border-radius: var(--radius-3xl);
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-8);
+    overflow: hidden;
   }
 
   .content {
@@ -137,8 +138,10 @@
     position: relative;
     right: auto;
     bottom: auto;
-    width: 220px;
-    height: 312px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 367 / 521;
+    overflow: visible;
   }
 
   .heading {

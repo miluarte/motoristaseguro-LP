@@ -109,6 +109,10 @@
     padding: var(--spacing-12) 0;
   }
 
+  .sectionHeader {
+    gap: var(--spacing-3);
+  }
+
   .container {
     padding: 0 var(--spacing-4);
   }
