@@ -62,3 +62,13 @@
   color: var(--fg-default);
   padding: 0 var(--spacing-6) var(--spacing-6);
 }
+
+@media (max-width: 768px) {
+  .trigger {
+    padding: var(--spacing-4);
+  }
+
+  .answer {
+    padding: 0 var(--spacing-4) var(--spacing-4);
+  }
+}

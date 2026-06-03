@@ -77,6 +77,81 @@
 }
 
 /* ==========================================
+   Drawer
+   ========================================== */
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.drawerOverlayOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: var(--bg-page);
+  z-index: 201;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-5);
+  gap: var(--spacing-8);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -8px 0 32px rgba(15, 23, 42, 0.12);
+}
+
+.drawerPanelOpen {
+  transform: translateX(0);
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawerClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  color: var(--fg-default);
+  flex-shrink: 0;
+  transition: background-color 0.15s;
+}
+
+.drawerClose:hover {
+  background-color: var(--bg-card);
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  flex: 1;
+}
+
+.drawerCta {
+  width: 100%;
+}
+
+/* ==========================================
    Responsivo
    ========================================== */
 @media (max-width: 768px) {

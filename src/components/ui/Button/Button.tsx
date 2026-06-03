@@ -7,6 +7,7 @@ interface ButtonProps {
   disabled?: boolean;
   showIcon?: boolean;
   onClick?: () => void;
+  className?: string;
 }
 
 function DownloadIcon() {
@@ -37,11 +38,13 @@ export default function Button({
   disabled = false,
   showIcon = true,
   onClick,
+  className: extraClassName,
 }: ButtonProps) {
   const className = [
     styles.button,
     styles[variant],
     disabled ? styles.disabled : '',
+    extraClassName,
   ]
     .filter(Boolean)
     .join(' ');

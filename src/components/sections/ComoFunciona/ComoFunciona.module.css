@@ -105,15 +105,21 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-12) 0;
+  }
+
   .container {
     padding: 0 var(--spacing-4);
   }
 
   .card {
     position: static;
+    padding: var(--spacing-4);
   }
 
   .heading {
     font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
   }
 }

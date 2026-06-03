@@ -17,7 +17,7 @@ export default function MenuItem({
 
   if (href) {
     return (
-      <a href={href} className={className}>
+      <a href={href} className={className} onClick={onClick}>
         {label}
       </a>
     );

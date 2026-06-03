@@ -35,8 +35,7 @@ export default function Hero() {
 
           <h1 className={`heading-xl ${styles.heading}`}>
             Mais segurança<br />
-            para quem vive na<br />
-            estrada
+            para quem vive na estrada
           </h1>
 
           <p className={`text-md-regular ${styles.description}`}>
@@ -60,6 +59,11 @@ export default function Hero() {
               </li>
             ))}
           </ul>
+
+          <div className={styles.toastsMobile}>
+            <Toast title="Alerta recebido" subtitle="Central SSP-PI · 4s" variant="success" />
+            <Toast title="Localização viva" subtitle="Atualiza a cada 3s" variant="brand" />
+          </div>
         </div>
 
         {/* Coluna direita — imagem do app */}

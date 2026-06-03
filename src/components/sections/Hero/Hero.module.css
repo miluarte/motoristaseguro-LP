@@ -107,12 +107,10 @@
 }
 
 /* ==========================================
-   Responsivo
+   Toasts mobile — oculto (toasts flutuam sobre a imagem em todos os breakpoints)
    ========================================== */
-@media (max-width: 1024px) {
-  .imageWrapper {
-    display: none;
-  }
+.toastsMobile {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -124,5 +122,35 @@
   .container {
     padding: 0 var(--spacing-5);
     flex-direction: column;
+  }
+
+  .heading {
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-1);
+  }
+
+  .downloadButtons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  .imageWrapper {
+    width: 100%;
+    min-height: 420px;
+  }
+
+  .toastAlert {
+    left: var(--spacing-4);
+    bottom: 18%;
+  }
+
+  .toastLocation {
+    right: var(--spacing-4);
+    top: 16%;
   }
 }
