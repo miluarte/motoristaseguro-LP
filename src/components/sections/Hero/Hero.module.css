@@ -61,18 +61,56 @@
 }
 
 /* ==========================================
-   Coluna da imagem (placeholder)
+   Coluna da imagem
    ========================================== */
-.imagePlaceholder {
+.imageWrapper {
+  position: relative;
   flex: 1;
   min-height: 660px;
+}
+
+.heroImage {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* ==========================================
+   Toasts flutuantes
+   ========================================== */
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toastAlert,
+.toastLocation {
+  position: absolute;
+  animation: toastIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.toastAlert {
+  bottom: 26%;
+  left: -24px;
+  animation-delay: 0.4s;
+}
+
+.toastLocation {
+  top: 22%;
+  right: -24px;
+  animation-delay: 0.8s;
 }
 
 /* ==========================================
    Responsivo
    ========================================== */
 @media (max-width: 1024px) {
-  .imagePlaceholder {
+  .imageWrapper {
     display: none;
   }
 }

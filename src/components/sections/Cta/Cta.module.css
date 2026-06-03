@@ -55,40 +55,12 @@
   overflow: hidden;
 }
 
-.phoneInner {
-  position: absolute;
-  left: 0;
-  right: -0.09%;
-  top: calc(50% + 116.43px);
-  transform: translateY(-50%);
-  aspect-ratio: 365 / 750;
-  border-radius: 53px;
-}
-
-.phoneFrame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 53px;
-}
-
-.phoneScreen {
-  position: absolute;
-  left: 4.41%;
-  right: 4.4%;
-  top: calc(50% + 116.43px);
-  transform: translateY(-50%);
-  aspect-ratio: 333 / 722;
-  overflow: hidden;
-}
-
-.phoneScreenImg {
+.phoneImg {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 /* ==========================================

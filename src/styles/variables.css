@@ -144,7 +144,7 @@
    --bg-card: var(--color-gray-100);
 
    /* Borders */
-   --border-default: var(--color-gray-200);
+   --border-default: color-mix(in srgb, var(--color-gray-600) 20%, transparent);
 
    /* Foregrounds (Texto e Ícones) */
    --fg-emphasis: var(--color-gray-950);
@@ -161,6 +161,11 @@
    /* Feedback */
    --fg-danger: var(--color-red-600);
    --fg-sucess: var(--color-green-500);
+   --bg-success-subtle: color-mix(in srgb, var(--color-govpi-verde) 12%, transparent);
+   --bg-brand-alpha: color-mix(in srgb, var(--color-govazul-600) 10%, transparent);
+
+   /* Shadows */
+   --shadow-card-elevated: 0px 24px 60px -16px rgba(3, 78, 162, 0.25), 0px 12px 24px 0px rgba(15, 23, 42, 0.06);
 
    /* Brand interactive states */
    --bg-brand: var(--color-govazul-600);

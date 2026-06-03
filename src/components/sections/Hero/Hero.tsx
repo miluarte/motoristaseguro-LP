@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import TagSection from '@/components/ui/TagSection/TagSection';
 import ButtonDownload from '@/components/ui/ButtonDownload/ButtonDownload';
+import Toast from '@/components/ui/Toast/Toast';
 import styles from './Hero.module.css';
 
 function CheckCheckIcon() {
@@ -60,8 +62,23 @@ export default function Hero() {
           </ul>
         </div>
 
-        {/* Coluna direita — espaço reservado para imagem */}
-        <div className={styles.imagePlaceholder} aria-hidden="true" />
+        {/* Coluna direita — imagem do app */}
+        <div className={styles.imageWrapper}>
+          <Image
+            src="/images/heroImg.png"
+            alt="Tela inicial do app Motorista Seguro"
+            fill
+            className={styles.heroImage}
+            sizes="(max-width: 1024px) 0px, 50vw"
+            priority
+          />
+          <div className={styles.toastAlert}>
+            <Toast title="Alerta recebido" subtitle="Central SSP-PI · 4s" variant="success" />
+          </div>
+          <div className={styles.toastLocation}>
+            <Toast title="Localização viva" subtitle="Atualiza a cada 3s" variant="brand" />
+          </div>
+        </div>
 
       </div>
     </section>

@@ -1,0 +1,45 @@
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background-color: var(--color-white);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card-elevated);
+  white-space: nowrap;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--spacing-10);
+  height: var(--spacing-10);
+  border-radius: var(--radius-xl);
+}
+
+.iconWrapper--success {
+  background-color: var(--bg-success-subtle);
+  color: var(--fg-sucess);
+}
+
+.iconWrapper--brand {
+  background-color: var(--bg-brand-alpha);
+  color: var(--fg-brand);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  color: var(--fg-emphasis);
+}
+
+.subtitle {
+  color: var(--fg-default);
+}

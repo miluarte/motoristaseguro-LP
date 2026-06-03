@@ -77,15 +77,17 @@
   color: var(--fg-default);
 }
 
-/* Placeholder da imagem */
-.cardImage {
-  height: 208px;
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
-  background-color: var(--color-gray-200);
-  background-image:
-    repeating-conic-gradient(var(--color-gray-100) 0% 25%, transparent 0% 50%);
-  background-size: 24px 24px;
+  overflow: hidden;
   flex-shrink: 0;
+}
+
+.cardImage {
+  object-fit: cover;
 }
 
 /* ==========================================

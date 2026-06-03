@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import TagSection from '@/components/ui/TagSection/TagSection';
 import styles from './ComoFunciona.module.css';
 
@@ -6,16 +7,22 @@ const cards = [
     title: 'Motorista aciona o alerta',
     description:
       'Pressionando o botão flutuante ou o botão principal por 3 segundos, o app envia localização e áudio à central.',
+    image: '/images/howWorks03.png',
+    imageAlt: 'Motorista dentro do carro acionando o app',
   },
   {
     title: 'Central da SSP-PI verifica',
     description:
       'Operadores credenciados recebem os dados, confirmam o motorista pelo cadastro e classificam a ocorrência.',
+    image: '/images/howWorks02.png',
+    imageAlt: 'Operadores na central verificando o alerta',
   },
   {
     title: 'Equipe é despachada',
     description:
       'A viatura mais próxima é direcionada à localização em tempo real até o motorista cancelar com biometria.',
+    image: '/images/howWorks01.png',
+    imageAlt: 'Viatura policial sendo despachada',
   },
 ];
 
@@ -49,7 +56,15 @@ export default function ComoFunciona() {
                 <h3 className={`text-md-bold ${styles.cardTitle}`}>{card.title}</h3>
                 <p className={`text-md-regular ${styles.cardDescription}`}>{card.description}</p>
               </div>
-              <div className={styles.cardImage} aria-hidden="true" />
+              <div className={styles.cardImageWrapper}>
+                <Image
+                  src={card.image}
+                  alt={card.imageAlt}
+                  fill
+                  className={styles.cardImage}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           ))}
         </div>
