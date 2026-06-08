@@ -26,7 +26,7 @@
   color: var(--fg-emphasis);
   text-align: center;
   font-size: var(--heading-primary-size);
-  line-height: var(--heading-secondary-line-height);
+  line-height: var(--heading-primary-line-height);
 }
 
 /* ==========================================
