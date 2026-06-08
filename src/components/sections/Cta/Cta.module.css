@@ -1,8 +1,9 @@
 .section {
-  width: 100%;
+  width: 100%
 }
 
 .container {
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -15,6 +16,7 @@
 }
 
 .card {
+  max-width: 1408px;
   background-color: var(--bg-brand);
   border-radius: var(--radius-4xl);
   padding: var(--section-padding-x);
@@ -24,21 +26,6 @@
   align-items: center;
 }
 
-/* ==========================================
-   Decoração de fundo (arcos)
-   ========================================== */
-.bgDecoration {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
-.bgDecorationImg {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-}
 
 /* ==========================================
    Mockup do iPhone (overflows o topo do card)
