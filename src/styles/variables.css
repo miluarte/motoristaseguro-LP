@@ -185,10 +185,19 @@
    /* ==========================================================================
       VARIÁVEIS AUTOMÁTICAS (PADRÃO: DESKTOP / LG)
       ========================================================================== */
-   --section-padding-x: var(--spacing-16);
-   /* 64px */
-   --section-padding-y: var(--spacing-16);
-   /* 64px */
+
+   /* Section padding */
+   --section-padding-x: var(--spacing-16);  /* 64px */
+   --section-padding-y: var(--spacing-20);  /* 80px */
+
+   /* Gap: entre o header da section e o conteúdo */
+   --section-gap: var(--spacing-10);        /* 40px */
+
+   /* Gap: entre elementos do header da section (título, subtítulo, etc.) */
+   --section-header-gap: var(--spacing-6);  /* 24px */
+
+   /* Gap: entre elementos de conteúdo repetidos (cards, itens de lista, etc.) */
+   --content-gap: var(--spacing-5);         /* 20px */
 }
 
 /* ==========================================================================
@@ -198,22 +207,22 @@
 /* MD Breakpoint (max-width: 1024px) */
 @media (max-width: 1024px) {
    :root {
-      --section-padding-x: var(--spacing-8);
-      /* 32px */
-      --section-padding-y: var(--spacing-8);
-      /* 32px */
+      --section-padding-x: var(--spacing-8);   /* 32px */
+      --section-padding-y: var(--spacing-16);  /* 64px */
+      --section-gap: var(--spacing-8);         /* 32px */
+      --section-header-gap: var(--spacing-5);  /* 20px */
+      --content-gap: var(--spacing-4);         /* 16px */
    }
-
 }
 
 /* SM Breakpoint (max-width: 768px) */
 @media (max-width: 768px) {
    :root {
-      --section-padding-x: var(--spacing-4);
-      /* 16px */
-      --section-padding-y: var(--spacing-4);
-      /* 16px */
-
+      --section-padding-x: var(--spacing-4);   /* 16px */
+      --section-padding-y: var(--spacing-16);  /* 64px */
+      --section-gap: var(--spacing-5);         /* 20px */
+      --section-header-gap: var(--spacing-3);  /* 12px */
+      --content-gap: var(--spacing-2);         /* 8px */
    }
 }
 

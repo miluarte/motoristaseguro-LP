@@ -11,6 +11,8 @@
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
 }
 
 .scrolled {
@@ -159,10 +161,6 @@
    Responsivo
    ========================================== */
 @media (max-width: 768px) {
-  .container {
-    padding: var(--spacing-3) var(--spacing-5);
-  }
-
   .nav,
   .actions {
     display: none;
