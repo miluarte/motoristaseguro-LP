@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Tracks fixed />
       <Header />
-      <main style={{ paddingTop: '74px' }}>
+      <main style={{ paddingTop: "74px" }}>
         <Hero />
         <About />
         <ComoFunciona />

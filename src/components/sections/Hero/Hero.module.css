@@ -1,5 +1,5 @@
 .section {
-  padding-top: var(--spacing-5);
+  padding-top: var(--hero-padding-top);
   width: 100%;
 }
 
@@ -14,6 +14,7 @@
    Coluna de conteúdo
    ========================================== */
 .content {
+    width: 100%;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -23,6 +24,8 @@
 
 .heading {
   color: var(--fg-emphasis);
+  font-size: var(--heading-hero-size);
+  line-height: var(--heading-hero-line-height);
 }
 
 .description {
@@ -41,7 +44,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-6);
+  gap: var(--content-gap);
 }
 
 .featureItem {
@@ -101,25 +104,25 @@
 }
 
 /* ==========================================
-   Toasts mobile — oculto (toasts flutuam sobre a imagem em todos os breakpoints)
+   Toasts mobile
    ========================================== */
 .toastsMobile {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding-top: var(--spacing-8);
+/* ==========================================
+   Responsivo — apenas mudanças de layout
+   ========================================== */
+@media (max-width: 1024px) {
+  .imageWrapper {
+    min-height: 520px;
   }
+}
 
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
     gap: var(--section-gap);
-  }
-
-  .heading {
-    font-size: var(--font-size-5);
-    line-height: var(--line-height-1);
   }
 
   .downloadButtons {
@@ -129,7 +132,6 @@
 
   .features {
     flex-direction: column;
-    gap: var(--spacing-2);
   }
 
   .imageWrapper {
@@ -138,12 +140,12 @@
   }
 
   .toastAlert {
-    left: var(--spacing-4);
+    left: var(--section-padding-x);
     bottom: 18%;
   }
 
   .toastLocation {
-    right: var(--spacing-4);
+    right: var(--section-padding-x);
     top: 16%;
   }
 }

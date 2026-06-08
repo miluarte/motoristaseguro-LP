@@ -20,7 +20,7 @@
    ========================================== */
 .main {
   display: flex;
-  gap: var(--spacing-12);
+  gap: var(--section-gap);
   align-items: flex-start;
 }
 
@@ -53,8 +53,7 @@
 /* Nav columns */
 .navColumns {
   display: flex;
-  gap: var(--spacing-12);
-  flex: 1;
+  gap: var(--section-gap);  flex: 1;
   justify-content: flex-end;
 }
 
@@ -116,6 +115,12 @@
 /* ==========================================
    Responsive
    ========================================== */
+@media (max-width: 1024px) {
+  .brand {
+    width: 280px;
+  }
+}
+
 @media (max-width: 768px) {
   .main {
     flex-direction: column;

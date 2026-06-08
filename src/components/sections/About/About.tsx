@@ -20,7 +20,7 @@ export default function About() {
 
         <div className={styles.header}>
           <TagSection label="Sobre o Motorista Seguro" />
-          <h2 className={`heading-md ${styles.heading}`}>
+          <h2 className={`heading-lg ${styles.heading}`}>
             Um botão, SSP-PI ao seu lado
           </h2>
           <p className={`text-md-regular ${styles.description}`}>

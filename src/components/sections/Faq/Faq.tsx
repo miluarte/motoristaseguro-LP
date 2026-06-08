@@ -39,10 +39,9 @@ export default function Faq() {
   return (
     <section className={styles.section} id="duvidas">
       <div className={styles.container}>
-
         <div className={styles.header}>
           <TagSection label="Dúvidas Frequentes" />
-          <h2 className={`heading-md ${styles.heading}`}>
+          <h2 className={`heading-lg ${styles.heading}`}>
             Antes de baixar, tire suas dúvidas
           </h2>
         </div>
@@ -58,7 +57,6 @@ export default function Faq() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );

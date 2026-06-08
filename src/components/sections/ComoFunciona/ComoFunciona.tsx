@@ -34,7 +34,7 @@ export default function ComoFunciona() {
         {/* Coluna esquerda — sticky */}
         <div className={styles.sectionHeader}>
           <TagSection label="Como funciona" />
-          <h2 className={`heading-md ${styles.heading}`}>
+          <h2 className={`heading-lg ${styles.heading}`}>
             Do toque no botão<br />
             à chegada da viatura
           </h2>

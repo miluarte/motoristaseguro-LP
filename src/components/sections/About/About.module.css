@@ -25,6 +25,8 @@
 .heading {
   color: var(--fg-emphasis);
   text-align: center;
+  font-size: var(--heading-primary-size);
+  line-height: var(--heading-primary-line-height);
 }
 
 .description {
@@ -53,7 +55,7 @@
   background-color: var(--bg-card);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
-  padding: var(--spacing-6) var(--spacing-6) 0;
+  padding: var(--card-padding) var(--card-padding) 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
@@ -64,7 +66,7 @@
 .cardReverse {
   justify-content: flex-end;
   padding-top: 0;
-  padding-bottom: var(--spacing-6);
+  padding-bottom: var(--card-padding);
 }
 
 .cardText {
@@ -138,18 +140,3 @@
   }
 }
 
-@media (max-width: 768px) {
-  .heading {
-    font-size: var(--font-size-3);
-    line-height: var(--line-height-3);
-  }
-
-  .card {
-    padding: var(--spacing-4) var(--spacing-4) 0;
-  }
-
-  .cardReverse {
-    padding-top: 0;
-    padding-bottom: var(--spacing-4);
-  }
-}

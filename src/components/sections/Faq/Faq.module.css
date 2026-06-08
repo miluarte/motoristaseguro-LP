@@ -25,6 +25,8 @@
 .heading {
   color: var(--fg-emphasis);
   text-align: center;
+  font-size: var(--heading-primary-size);
+  line-height: var(--heading-secondary-line-height);
 }
 
 /* ==========================================
@@ -35,15 +37,5 @@
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3);
-}
-
-/* ==========================================
-   Responsivo
-   ========================================== */
-@media (max-width: 768px) {
-  .heading {
-    font-size: var(--font-size-3);
-    line-height: var(--line-height-3);
-  }
+  gap: var(--content-gap);
 }

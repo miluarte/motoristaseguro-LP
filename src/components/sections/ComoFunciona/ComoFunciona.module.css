@@ -1,10 +1,10 @@
-/* Offset do header fixo (tracks 10px + header 64px) + margem visual */
 :root {
   --sticky-top: 90px;
 }
 
 .section {
   width: 100%;
+  background-color: var(--bg-card);
 }
 
 .container {
@@ -30,6 +30,8 @@
 
 .heading {
   color: var(--fg-emphasis);
+  font-size: var(--heading-primary-size);
+  line-height: var(--heading-primary-line-height);
 }
 
 .description {
@@ -50,10 +52,10 @@
 .card {
   position: sticky;
   top: var(--sticky-top);
-  background-color: var(--bg-card);
+  background-color: var(--bg-page);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
-  padding: var(--spacing-6);
+  padding: var(--card-padding);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
@@ -101,13 +103,7 @@
 }
 
 @media (max-width: 768px) {
-  .heading {
-    font-size: var(--font-size-3);
-    line-height: var(--line-height-3);
-  }
-
   .card {
     position: static;
-    padding: var(--spacing-4);
   }
 }
